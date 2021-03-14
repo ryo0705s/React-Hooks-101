@@ -1,19 +1,24 @@
-// import logo from './logo.svg'
-// import './App.css'
-import React, {useState} from 'react'
+import React, { useEffect, useState } from 'react'
 const App = props => {
   const [state, setState] = useState(props)
   const {name, price} = state
-  // const [name, setName] = useState(props.name)
-  // const [price, setPrice] = useState(props.price)
-  // const reset = () => {
-  //   // setPrice(props.price)
-  //   // setName(props.name)
-  //   setState(props)
-  // }
+  useEffect(() => {
+    console.log('This is like componentDidMount or componentDidupdate.')
+  })
+  useEffect(() => {
+    console.log('This is like componentDidMount.')
+  },[])
+  useEffect(() => {
+    console.log('This callback is for name only.')
+  },[name])
+    // const renderPeriod = () => {
+    //   console.log('renderPeriod renders period.')
+    //   return '。'
+    // }
   return (
     <>
     <p>現在の{name}は、{price}円です。</p>
+    {/* <p>現在の{name}は、{price}円です{renderPeriod()}</p> */}
     {/* <button onClick={() => setPrice(price + 1)}>+1</button> */}
     <button onClick={() => setState({...state, price: price + 1})}>+1</button>
     <button onClick={() => setState({...state, price: price - 1})}>-1</button>
@@ -24,11 +29,13 @@ const App = props => {
   )
 }
 App.defaultProps = {
-    name: '',
+  name: '',
     price: 1000
   }
-
-export default App
+  
+  export default App
+  // import logo from './logo.svg'
+  // import './App.css'
 
 // const [count, setCount] = useState(0)
 // const increment = () => setCount(count + 1)
@@ -38,9 +45,16 @@ export default App
 // const reset = () => setCount(0)
 // const double = () => setCount(count * 2)
 // const divide3 = () => setCount(previousCount => 
+// const [name, setName] = useState(props.name)
+// const [price, setPrice] = useState(props.price)
+// const reset = () => {
+//   // setPrice(props.price)
+//   // setName(props.name)
+//   setState(props)
+// }
 //   previousCount % 3 === 0 ? previousCount / 3 : previousCount)
   // if (previousCount %  3 === 0) {
-  //   return previousCount / 3
+    //   return previousCount / 3
   // } else {
   //   return previousCount
   // }
