@@ -1,11 +1,11 @@
-
-
+import React from 'react  '
+import { DELETE_EVENT } from '../actions'
 const Event = ({ dispatch, event }) => {
-  {
     // state.map((event, index) => {
       const id = event.id
       const handleClickDeleteButton = () => {
         const result = window.confirm(`イベント(id=${id})を本当に削除しても良いですか？')
+        // const DELETE_EVENT = 'DELETE_EVENT'
         if (result) dispatch({ type: 'DELETE_EVENT', id })
       }
       return (
@@ -15,9 +15,7 @@ const Event = ({ dispatch, event }) => {
           <td>{event.body}</td>
           <td><button type="button" className="btn btn-danger" onClick={() => {satate[]}}>削除</button></td>
         </tr>
-      )
     })
-  }
 }
 
 export default Event

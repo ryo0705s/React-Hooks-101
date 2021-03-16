@@ -1,0 +1,3 @@
+exoprt const CREATE_EVENT = 'CREATE_EVENT'
+exoprt const DELETE_EVENT = 'DELETE_EVENT'
+exoprt const DELETE_ALL_EVENTS = 'DELETE_ALL_EVENTS'
